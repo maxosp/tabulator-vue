@@ -1,19 +1,78 @@
-# tabulator-vue
+# What is this?
 
-## Project setup
+A wrapper for using Tabulator.js in your Vue.js apps.
+
+# Installation
+
+`npm i tabulator-vue --save`
+
+# Using
+
 ```
-npm install
+<template>
+  <div id="app">
+    <TabulatorComponent
+      :dataMas="data"
+      :options="options"
+    />
+  </div>
+</template>
+
+import TabulatorComponent from 'tabulator-vue';
+import 'tabulator-vue/dist/tabulator-vue.css';
+
+export default {
+  name: '#app',
+  components: {
+    TabulatorComponent
+  },
+  data () {
+    return {
+      data: [
+        {
+          name: 'Tom',
+          age: 14
+        },
+        {
+          name: 'Jack',
+          age: 11
+        },
+         {
+          name: 'May',
+          age: 15
+        },
+         {
+          name: 'Paul',
+          age: 18
+        },
+         {
+          name: 'David',
+          age: 10
+        },
+      ],
+      options: {
+        columns: [
+            {
+              title: 'Name',
+              field: 'name',
+              sorter: 'string',
+              width: 200,
+              editable: false,
+            },
+            {
+              title: 'Age',
+              field: 'age',
+            },
+        ],
+        autoResize: false,
+        columnHeaderVertAlign:"center",
+      },
+    }
+  }
+}
+</script>
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Options 
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Tabulator-vue supports the same options as Tabulator.js, so you just send parameters to TabulatorComponent props like 'options'.

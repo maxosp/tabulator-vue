@@ -1,23 +1,38 @@
 {
   "name": "tabulator-vue",
-  "version": "0.1.0",
-  "private": true,
+  "description": "A Vue.js component using Tabulator.js",
+  "version": "0.2.8",
+  "author": "Maxim Osipenko <maxospin@gmail.com>",
+  "license": "MIT",
+  "main": "./dist/tabulator-vue.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "build-bundle": "vue-cli-service build --target lib --name tabulator-vue ./src/main.js"
   },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
-  },
+  "deprecated": false,
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "vue-template-compiler": "^2.6.11"
   },
+  "bundledDependencies": [
+    "dashify",
+    "lodash.mergewith",
+    "tabulator-tables",
+    "vue"
+  ],
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
+  ],
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js",
+    "node_modules/"
   ]
 }
